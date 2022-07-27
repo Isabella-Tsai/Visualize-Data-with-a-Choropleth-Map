@@ -109,14 +109,12 @@ d3.json(countyURL).then(
             console.log(error)
         }else{
             countyData = topojson.feature(data, data.objects.counties).features
-            console.log(countyData)
             d3.json(educationURL).then(
                 (data, error) =>{
                     if(error){
                         console.log(error)
                     }else{
                         educationData = data
-                        console.log(educationData)
                         drawMap()
                     }
                 }
